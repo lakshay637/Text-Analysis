@@ -26,24 +26,9 @@ export default function TextForm(props) {
   }
 
   const handleCopy = () => {
-  const textBox = document.getElementById("myBox");
-
-  if (navigator.clipboard && window.isSecureContext) {
-    // ✅ Modern, secure way
-    navigator.clipboard.writeText(textBox.value)
-      .then(() => {
-        props.showAlert("Copied to clipboard!", "success");
-      })
-      .catch((err) => {
-        console.error("Clipboard copy failed:", err);
-      });
-  } else {
-    // ⚠️ Fallback for insecure HTTP or unsupported browsers
-    textBox.select();
-    document.execCommand("copy");
+    navigator.clipboard.writeText(text)
     props.showAlert("Copied to clipboard!", "success");
   }
-};
 
 
   const handleExtraSpaces = () => {
