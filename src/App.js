@@ -28,33 +28,33 @@ const showAlert = (message, type) => {
       setMode('dark');
       document.body.style.backgroundColor = '#042743';
       showAlert('Dark mode enabled', 'success');
-      document.title = 'Urban Clone Company - Dark Mode';
+    //  document.title = 'Text Analysis - Dark Mode';
       // setInterval(() => {
-      //  document.title = 'Urban Company is doing great!';
+      //  document.title = 'Text Analysis is doing great!';
       // }, 2000);
       // setInterval(() => {
-      //  document.title = 'Install Urban Company App';
+      //  document.title = 'Install Text Analysis App';
       //  }, 1500);
     } else {
       setMode('light');
       document.body.style.backgroundColor = 'white';
       showAlert('Light mode enabled', 'success');
-      document.title = 'Urban Clone Company - Light Mode';
+    //  document.title = 'Text Analysis - Light Mode';
     }
   }
   return (
     <>
     {/* <Navbar /> Uncomment to test defaultProps */}
     <Router>
-     <Navbar title="Urban Company Clone" aboutText="About Us" mode={Mode} toggleMode={toggleMode}/>
+     <Navbar title="Text Analysis" aboutText="About Us" mode={Mode} toggleMode={toggleMode}/>
       <Alert alert={alert} />
       <div className="container my-3">
         <switch>     
           {/* /users --> Component 1
               /users/home --> Component 2 */}
            <Routes>
-          <Route exact path="/about" element={<About />} />
-          <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Enter text to analyze below" mode={Mode} />} />
+          <Route exact path="/about" element={<About mode={Mode} />} />
+          <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Try Text Analysis - Word counter, Character counter, Remove extra spaces" mode={Mode} />} />
         </Routes>
       </switch>
       </div>
