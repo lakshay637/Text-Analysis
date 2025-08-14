@@ -40,16 +40,7 @@ export default function About(props = { mode: "light" }) {
         }}
       >
         <div className="text-center mb-4">
-          <h1 style={{
-            fontWeight: 900,
-            letterSpacing: 2,
-            color: textColor,
-            fontSize: "clamp(2rem, 5vw, 3.2rem)",
-            marginBottom: 8,
-            background: mode === "dark" ? "linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%)" : "linear-gradient(135deg, #1e293b 0%, #8b5cf6 100%)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent"
-          }}>
+          <h1 style={{ color: "#161dedff", fontSize: "clamp(1.5rem, 4vw, 2.5rem)", margin: "8px 0 0 0", fontWeight: "900" }}>
             About Text Analysis
           </h1>
           <p className="lead" style={{
